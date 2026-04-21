@@ -50,9 +50,13 @@ while True:
     choice = input("請選擇：")
 
     if choice == "1":
-        start = int(input("起始數字："))
-        end = int(input("結束數字："))
-        count = int(input("抽幾個數字："))
+        try:
+    start = int(input("起始數字："))
+    end = int(input("結束數字："))
+    count = int(input("抽幾個數字："))
+except ValueError:
+    print("❌ 請輸入數字！")
+    continue
         lottery.draw_numbers(start, end, count)
 
     elif choice == "2":
